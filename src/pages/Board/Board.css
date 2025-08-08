@@ -1,0 +1,131 @@
+.kanban-board {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  background-color: #020000; /* Темный фон, как на изображении */
+  min-height: 100vh; /* Занимает всю высоту */
+  color: #e0e0e0; /* Светлый текст */
+  font-family: Arial, sans-serif; /* Похожий шрифт */
+}
+
+.kanban-board h2 {
+  color: #fff; /* Белый заголовок */
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.board-columns {
+  display: flex;
+  gap: 20px; /* Промежуток между колонками */
+  align-items: flex-start; /* Колонки выравниваются по верху */
+  flex-wrap: wrap; /* Чтобы колонки переносились на новую строку, если не хватает места */
+}
+
+.column {
+  background-color: #383838; /* Фон колонки */
+  border-radius: 8px;
+  padding: 15px;
+  min-width: 280px; /* Минимальная ширина колонки */
+  flex: 1; /* Колонки равномерно распределяются по доступному пространству */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Тень для объема */
+}
+
+.column-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #4a4a4a; /* Разделитель под заголовком */
+}
+
+.column-header h3 {
+  margin: 0;
+  color: #fff; /* Белый текст заголовка колонки */
+  font-size: 1.2em;
+}
+
+.add-card-btn {
+  background-color: #5aac44; /* Цвет кнопки добавления задачи */
+  color: #fff;
+  border: none;
+  border-radius: 50%; /* Круглая кнопка */
+  width: 30px;
+  height: 30px;
+  font-size: 1.5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.add-card-btn:hover {
+  background-color: #4a9f34; /* Затемнение при наведении */
+}
+
+.card-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Промежуток между карточками */
+}
+
+.card {
+  background-color: #444; /* Фон карточки */
+  border-radius: 6px;
+  padding: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  cursor: grab; /* Курсор для перетаскивания */
+  transition: background-color 0.2s ease-in-out;
+}
+
+.card:hover {
+  background-color: #4c4c4c; /* Затемнение при наведении на карточку */
+}
+
+.card h4 {
+  margin: 0 0 5px 0;
+  color: #fff; /* Белый текст заголовка карточки */
+  font-size: 1em;
+}
+
+.card p {
+  margin: 0;
+  color: #b0b0b0; /* Светло-серый текст описания */
+  font-size: 0.9em;
+}
+
+/* Стили для Drag & Drop */
+.column.is-dragging {
+  border: 2px dashed #666;
+  background-color: #333;
+}
+
+.card.is-dragging {
+  border: 2px dashed #5aac44;
+  background-color: #555;
+}
+
+/* Дополнительные стили для информации о колонках (задачи, приоритет) */
+.column-header::before {
+  content: attr(data-info); /* Используем data-атрибут для отображения информации */
+  font-size: 0.9em;
+  color: #b0b0b0;
+  margin-right: 10px;
+}
+
+/* Стили для иконок и дат, если они будут добавлены в JSX */
+.card-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  font-size: 0.8em;
+  color: #888;
+}
+
+.card-meta span {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
