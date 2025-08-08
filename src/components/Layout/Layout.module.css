@@ -1,101 +1,134 @@
 .container {
-    display: flex;
+  display: flex;
+  flex-direction: row;
+  min-height: 100vh;
 }
 
+/* Сайдбар */
+.sidebar {
+  width: 250px;
+  background-color: #222;
+  color: white;
+  padding: 20px;
+}
+
+/* Контент */
 .dashboard {
-    position: relative;
-    width: 100%;
-    z-index: 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
 }
 
-.topBaseGradients {
-    position: absolute;
-    top: 0; 
-    left: 0; 
-    right: 0;
-    height: 20rem;
-    overflow: hidden;
-    z-index: -1;
-} 
-
-.topBaseGradients>:nth-child(2)
-{
-    left: 40%;
-}
-
-.topBaseGradients>:nth-child(3) 
-{
-    right: 0;
-}
-
+/* Хедер */
 .header {
-    display: flex;
-    padding: 2rem 4rem;
-    align-items: center;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
-.header>:ntn-child(1)
-{
-    font-size: 1.2rem;
-}
-
+/* Пошук */
 .searchBar {
-    background-color: rgba(255, 255, 255, 0.496);
-    width: 30%;
-    max-width: 25rem;
-    padding: 1rem 1rem;
-    border-radius: 8px;
-    height: 2rem;
-    display: flex;
-    align-items: center;
-    border: 2px solid rgb(63, 63, 63);
-    justify-content: center;
-    gap: 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
-.searchBar>input {
-    background: transparent;
-    color: white;
-    outline: none;
-    border: none;
-    padding: 0;
-    width: 100%;
+.searchBar input {
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
 }
 
+/* Профіль */
 .profile {
-    display: flex;
-    gap: 1rem;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
-.profile>img {
-    height: 60px;
-    width: 60px;
+.profile img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
 }
 
 .details {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
+  display: flex;
+  flex-direction: column;
 }
 
-.details>:ntn-child(1) {
-    font-size: 1rem;
-    font-weight: bold;
-}
-
+/* Контент */
 .content {
-    margin: auto;
-    display: flex;
-    height: 100%;
-    /* align-items: center; */
-    /* uncoment the aic, and make mt -4rem */
-    margin-top: 4rem;
+  margin-top: 20px;
+  overflow-x: auto;
 }
 
-.content>div {
+/* Градієнти */
+.topBaseGradients {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  z-index: -1;
+}
+
+.gradient-red,
+.gradient-orange,
+.gradient-blue {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  opacity: 0.3;
+}
+
+.gradient-red {
+  background: red;
+  top: 0;
+  left: 0;
+}
+
+.gradient-orange {
+  background: orange;
+  top: 0;
+  right: 0;
+}
+
+.gradient-blue {
+  background: blue;
+  bottom: 0;
+  left: 50%;
+}
+
+/* 📱 Адаптація для мобільних */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    display: none; /* або зробити бургер-меню */
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .searchBar input {
     width: 100%;
-    min-width: 75vh;
+  }
+
+  .profile {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .dashboard {
+    padding: 10px;
+  }
 }

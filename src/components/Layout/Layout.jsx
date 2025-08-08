@@ -7,7 +7,7 @@ import { Navigate, Outlet } from 'react-router-dom';
 
 const Layout = () => {
 
-  const { pathname } = useLocation;
+  const { pathname } = useLocation();
 
   return ( <div className={css.container}>
     <SideBar />
