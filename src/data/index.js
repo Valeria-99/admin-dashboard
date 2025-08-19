@@ -1,4 +1,4 @@
-import moment from "moment/moment";
+import moment from "moment";
 
 export const cardsData = [
   {
@@ -25,7 +25,7 @@ export const cardsData = [
 
 export const ordersData = [
   {
-    name: "Skatebnoard",
+    name: "Skateboard",
     type: "Illustration",
     items: 58,
     change: 290,
@@ -65,7 +65,7 @@ let todayStr = moment().format("YYYY-MM-DD")  // YYYY-MM-DD of today
 export const INITIAL_EVENTS = [
   {
     id: createEventId(),
-    title: 'Lunch Pary',
+    title: 'Lunch Party',
     start: todayStr + 'T09:00:00',
 
   },
@@ -86,7 +86,7 @@ export const INITIAL_EVENTS = [
   },
   {
     id: createEventId(),
-    title: "Payment Shedules",
+    title: "Payment Schedules",
     start: moment(todayStr).add(5, "days").format("YYYY-MM-DD") + 'T13:00:00'
   },
   {
@@ -143,7 +143,7 @@ export const boardData = {
         {
           id: 11,
           title: "Custom Kanban Board",
-          description: "Setup react-kanban dep within Dashboard as seperate page"
+          description: "Setup react-kanban dep within Dashboard as separate page"
         }
       ]
     },
@@ -158,7 +158,7 @@ export const boardData = {
         },
         {
           id: 13,
-          title: "Modular structre",
+          title: "Modular structure",
           description: "Write css in form of modules to reduce the naming conflicts"
         }
       ]
@@ -250,3 +250,5 @@ export const userData = [
     state: 'South Carolina',
   },
 ]
+
+export default userData

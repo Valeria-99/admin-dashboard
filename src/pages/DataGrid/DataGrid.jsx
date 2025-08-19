@@ -1,7 +1,7 @@
 import React, {useMemo} from 'react';
 import {MaterialReactTable} from "material-react-table";
 import './DataGrid.css';
-import userData from '../../data';
+import { userData } from '../../data';
 
 const DataGrid = () => {
 
